@@ -58,7 +58,7 @@ async function getParent(name) {
 async function getRegistrarEntry(name) {
   const registrar = getRegistrar()
   const nameArray = name.split('.')
-  if (nameArray.length > 3 || nameArray[1] !== 'eth') {
+  if (nameArray.length > 3 || nameArray[1] !== 'one') {
     return {}
   }
 
@@ -167,7 +167,7 @@ function adjustForShortNames(node) {
   const { label, parent } = node
 
   // return original node if is subdomain or not eth
-  if (nameArray.length > 2 || parent !== 'eth' || label.length > 6) return node
+  if (nameArray.length > 2 || parent !== 'one' || label.length > 6) return node
 
   //if the auctions are over
   if (new Date() > new Date(1570924800000)) {
@@ -370,7 +370,7 @@ const resolvers = {
       }
 
       async function calculateIsPublicResolverReady() {
-        const publicResolver = await ens.getAddress('resolver.eth')
+        const publicResolver = await ens.getAddress('resolver.one')
         return !OLD_RESOLVERS.map(a => a.toLowerCase()).includes(publicResolver)
       }
 
@@ -621,7 +621,7 @@ const resolvers = {
                   const { decoder, coinType } = formatsByName[coinRecord.key]
                   let addressAsBytes
                   // use 0x00... for ETH because an empty string throws
-                  if (coinRecord.key === 'ETH' && coinRecord.value === '') {
+                  if (coinRecord.key === 'ONE' && coinRecord.value === '') {
                     coinRecord.value = emptyAddress
                   }
                   if (!coinRecord.value || coinRecord.value === '') {
@@ -854,7 +854,7 @@ const resolvers = {
 
       // get public resolver
       try {
-        const publicResolver = await ens.getAddress('resolver.eth')
+        const publicResolver = await ens.getAddress('resolver.one')
         const resolver = await ens.getResolver(name)
         const isOldContentResolver = calculateIsOldContentResolver(resolver)
 

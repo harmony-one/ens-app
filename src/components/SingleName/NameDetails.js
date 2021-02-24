@@ -247,7 +247,7 @@ function DetailsContainer({
         ''
       )}
       <OwnerFields outOfSync={outOfSync}>
-        {domain.parent === 'eth' && domain.isNewRegistrar ? (
+        {domain.parent === 'one' && domain.isNewRegistrar ? (
           <>
             <DetailsItemEditable
               domain={domain}
@@ -279,7 +279,7 @@ function DetailsContainer({
               copyToClipboard={true}
             />
           </>
-        ) : domain.parent === 'eth' && !domain.isNewRegistrar ? (
+        ) : domain.parent === 'one' && !domain.isNewRegistrar ? (
           <>
             <DetailsItem uneditable>
               <DetailsKey>{t('c.registrant')}</DetailsKey>
@@ -598,7 +598,7 @@ function NameDetails({
   const releaseDeed = domain.deedOwner && parseInt(domain.deedOwner, 16) !== 0
   const isAnAbsolutePath = pathname.split('/').length > 3
 
-  if (domain.parent === 'eth' && tab === 'register' && !isAnAbsolutePath) {
+  if (domain.parent === 'one' && tab === 'register' && !isAnAbsolutePath) {
     return (
       <NameRegister
         registrationOpen={registrationOpen}
@@ -609,7 +609,7 @@ function NameDetails({
       />
     )
   } else if (
-    domain.parent === 'eth' &&
+    domain.parent === 'one' &&
     tab === 'details' &&
     !isAnAbsolutePath
   ) {
@@ -636,7 +636,7 @@ function NameDetails({
         account={account}
       />
     )
-  } else if (domain.parent !== 'eth' && !isAnAbsolutePath) {
+  } else if (domain.parent !== 'one' && !isAnAbsolutePath) {
     //subdomain or dns
     return (
       <DetailsContainer

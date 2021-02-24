@@ -190,7 +190,7 @@ function AddReverseRecord({ account, currentAddress }) {
               <Trans i18nKey="singleName.record.messages.explanation">
                 The Reverse Resolution translates an address into a name. It
                 allows Dapps to show in their interfaces '
-                {{ name: getReverseRecord?.name || 'example.eth' }}' rather than
+                {{ name: getReverseRecord?.name || 'example.one' }}' rather than
                 the long address '{{ account }}'. If you would like to set up
                 your reverse for a different account, please switch accounts in
                 your dapp browser.

@@ -11,7 +11,7 @@ describe('Search', () => {
       .click()
 
     cy.getByTestId('domain-container').within(container => {
-      cy.queryByText('resolver.eth', { exact: false }).should('exist')
+      cy.queryByText('resolver.one', { exact: false }).should('exist')
       cy.queryByText('Expires', { exact: false }).should('exist')
     })
   })
@@ -19,7 +19,7 @@ describe('Search', () => {
   //Visit a domain, check the owner, resolver, address, content exists
   it('can search for a domain', () => {
     cy.visit(ROOT)
-    cy.getByPlaceholderText('Search', { exact: false }).type('resolver.eth')
+    cy.getByPlaceholderText('Search', { exact: false }).type('resolver.one')
     cy.wait(500)
     cy.get('button')
       .contains('Search')
@@ -32,7 +32,7 @@ describe('Search', () => {
 
   it('can search for a domain', () => {
     cy.visit(ROOT)
-    cy.getByPlaceholderText('Search', { exact: false }).type('resolver.eth')
+    cy.getByPlaceholderText('Search', { exact: false }).type('resolver.one')
     cy.wait(500)
     cy.get('button')
       .contains('Search')
@@ -95,6 +95,6 @@ describe('Search', () => {
       .click()
 
     cy.queryByText('Names', { exact: false }).should('exist')
-    cy.queryByText('notldispsecified.eth', { exact: false }).should('exist')
+    cy.queryByText('notldispsecified.one', { exact: false }).should('exist')
   })
 })

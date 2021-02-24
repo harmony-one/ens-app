@@ -10,7 +10,7 @@ const validator = (symbol, value) => {
   })
 }
 
-const PLACEHOLDER_RECORDS = ['ETH', 'BTC', 'DOGE', 'LTC']
+const PLACEHOLDER_RECORDS = ['ONE', 'BTC', 'DOGE', 'LTC']
 
 const getPlaceholder = symbol => {
   return `Enter a ${symbol} address`
@@ -23,7 +23,7 @@ export default function Coins(props) {
       records={
         props.updatedRecords.coins &&
         props.updatedRecords.coins.sort(record =>
-          record.key === 'ETH' ? -1 : 1
+          record.key === 'ONE' ? -1 : 1
         )
       }
       placeholderRecords={PLACEHOLDER_RECORDS}

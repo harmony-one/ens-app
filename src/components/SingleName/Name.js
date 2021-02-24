@@ -29,7 +29,7 @@ const RightBar = styled('div')`
 const Favourite = styled(DefaultFavourite)``
 
 function isRegistrationOpen(available, parent, isDeedOwner) {
-  return parent === 'eth' && !isDeedOwner && available
+  return parent === 'one' && !isDeedOwner && available
 }
 
 function isDNSRegistrationOpen(domain) {

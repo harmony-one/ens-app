@@ -3,7 +3,7 @@ const NAME_ROOT = Cypress.env('NAME_ROOT')
 
 describe('Reverse record', () => {
   //Visit a domain, check the owner, resolver, address, content exists
-  it('is set to abittooawesome.eth', () => {
+  it('is set to abittooawesome.one', () => {
     cy.visit(ROOT)
     cy.getByPlaceholderText('Search', { exact: false }).type(
       Cypress.env('ownerAddress')
@@ -15,13 +15,13 @@ describe('Reverse record', () => {
     cy.queryByTestId('editable-reverse-record-set', { exact: false }).should(
       'exist'
     )
-    cy.queryByText('Reverse record: Set to abittooawesome.eth', {
+    cy.queryByText('Reverse record: Set to abittooawesome.one', {
       exact: false,
       timeout: 10000
     }).should('exist')
     cy.getByTestId('account', { exact: false, timeout: 10000 }).should(
       'have.text',
-      'abittooawesome.eth'
+      'abittooawesome.one'
     )
   })
   it('Display reverse record not set for non owner', () => {

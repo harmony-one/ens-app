@@ -79,7 +79,7 @@ const TEXT_PLACEHOLDER_RECORDS = [
   'notice'
 ]
 
-const COIN_PLACEHOLDER_RECORDS = ['ETH', ...COIN_LIST.slice(0, 3)]
+const COIN_PLACEHOLDER_RECORDS = ['ONE', ...COIN_LIST.slice(0, 3)]
 
 function isEmpty(record) {
   if (parseInt(record, 16) === 0) {

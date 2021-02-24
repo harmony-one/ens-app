@@ -32,7 +32,7 @@ class Results extends React.Component {
       errors: []
     })
     if (_searchTerm.split('.').length === 1) {
-      searchTerm = _searchTerm + '.eth'
+      searchTerm = _searchTerm + '.one'
     } else {
       searchTerm = _searchTerm
     }
