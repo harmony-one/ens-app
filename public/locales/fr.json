@@ -128,10 +128,10 @@
     },
     "howtouse": {
       "body": "L'application ENS est une interface graphique pour des utilisateurs non techniques. Elle vous permet de rechercher n'importe quel nom, de créer des sous-domaines et de gérer leurs adresses et resources.",
-      "title": "Comment utiliser ENS"
+      "title": "Comment utiliser OneNames"
     },
     "whatisens": {
-      "body": "Ethereum Name Service est un système de nommage distribué, ouvert et extensible basé sur la blockchain Ethereum. ENS élimine le besoin de copier ou taper de longues adresses Ethereum. ",
+      "body": "OneNames Service est un système de nommage distribué, ouvert et extensible basé sur la blockchain Ethereum. ENS élimine le besoin de copier ou taper de longues adresses Ethereum. ",
       "title": "Ce que c'est"
     }
   },

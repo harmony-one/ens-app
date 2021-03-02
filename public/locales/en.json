@@ -1,6 +1,6 @@
 {
   "address": {
-    "etherscanButton": "View on Etherscan",
+    "etherscanButton": "View on Explorer",
     "filter": {
       "controller": "Controller",
       "registrant": "Registrant"
@@ -127,11 +127,11 @@
     "announcements": {
     },
     "howtouse": {
-      "body": "The ENS App is a Graphical User Interface for non-technical users. It allows you to search any name, manage their addresses or resources it points to and create subdomains for each name.",
-      "title": "How to use ENS"
+      "body": "The OneNames App is a Graphical User Interface for non-technical users. It allows you to search any name, manage their addresses or resources it points to and create subdomains for each name.",
+      "title": "How to use OneNames"
     },
     "whatisens": {
-      "body": "The Ethereum Name Service is a distributed, open, and extensible naming system based on the Ethereum blockchain. ENS eliminates the need to copy or type long addresses.",
+      "body": "The OneNames Service is a distributed, open, and extensible naming system based on the Harmony blockchain. OneNames eliminates the need to copy or type long addresses.",
       "title": "What it is"
     }
   },

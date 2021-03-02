@@ -153,13 +153,16 @@ function SideNav({ match, isMenuOpen, toggleMenu }) {
           </NavLink>
         </li>
         <li>
-          <NavLink onClick={toggleMenu} active={url === '/faq'} to="/faq">
+          <ThirdPartyLink
+            href="https://onenames.gitbook.io/onenames/faq"
+            target="_blank"
+          >
             <SpeechBubble />
             <span>{t('c.faq')}</span>
-          </NavLink>
+          </ThirdPartyLink>
         </li>
         <li>
-          <ThirdPartyLink href={aboutPageURL()}>
+          <ThirdPartyLink href={aboutPageURL()} target="_blank">
             <SpeechBubble />
             <span>{t('c.about')}</span>
           </ThirdPartyLink>

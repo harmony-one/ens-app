@@ -128,7 +128,7 @@
     },
     "howtouse": {
       "body": "La aplicación ENS es una interfaz gráfica de usuario para usuarios no-técnicos. Te permite buscar cualquier nombre, gestionar sus direcciones o los recursos a los que direcciona, o crear subdominios para cada uno.",
-      "title": "Cómo utilizar ENS"
+      "title": "Cómo utilizar OneNames"
     },
     "whatisens": {
       "body": "El Servicio de Nombres de Ethereum  es un sistema de nombres distribuido, abierto y extensible basado en la cadena de bloques de Ethereum. El ENS elimina la necesidad de copiar o escribir direcciones largas.",

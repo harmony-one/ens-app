@@ -251,7 +251,7 @@ const LogoLarge = styled(motion.img)`
   width: 50%;
   margin: 0 auto 0;
   ${mq.medium`
-    width: 223px;
+    width: 323px;
   `}
 `
 

@@ -98,7 +98,7 @@
       "manage": {
         "text1": "Odkąd jesteś właścicielem, możesz zarządzać swoimi nazwami.",
         "text2": "Ponieważ nie jesteś właścicielem, możesz tylko wyświetlać nazwy w rejestratorze.",
-        "title": "Gratulacje! Udało ci się dodać domenę DNS do Rejestru ENS"
+        "title": "Gratulacje! Udało ci się dodać domenę DNS do Rejestru OneNames"
       },
       "proof": {
         "text1": "\nAdres, który pojawia się w rekordzie txt DNS, to ten sam adres.",
@@ -130,10 +130,10 @@
     },
     "howtouse": {
       "body": "Aplikacja ENS to graficzny interfejs użytkownika dla użytkowników nietechnicznych. Umożliwia wyszukiwanie dowolnej nazwy, zarządzanie jej adresami lub zasobami, na które wskazuje, i tworzenie subdomen dla każdej nazwy.",
-      "title": "Jak używać ENS"
+      "title": "Jak używać OneNames"
     },
     "whatisens": {
-      "body": "The Ethereum Name Service to rozproszony, otwarty i rozszerzalny system nazewnictwa oparty na blockchainie Ethereum. ENS eliminuje potrzebę kopiowania lub wpisywania długich adresów.",
+      "body": "The OneNames Service to rozproszony, otwarty i rozszerzalny system nazewnictwa oparty na blockchainie Ethereum. ENS eliminuje potrzebę kopiowania lub wpisywania długich adresów.",
       "title": "Co to jest"
     }
   },

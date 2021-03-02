@@ -29,7 +29,7 @@ const EtherScanLink = ({ children, address, className }) => {
     <EtherScanLinkContainer
       target="_blank"
       rel="noopener"
-      href={`https://${subdomain}etherscan.io/address/${address}`}
+      href={`https://explorer.pops.one/#/address/${address}`}
       className={className}
     >
       {children}

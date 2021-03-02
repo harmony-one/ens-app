@@ -94,13 +94,13 @@
       "manage": {
         "text1": "Bạn có thể quản lý tên miền này ngay bây giờ do bạn đã là chủ sở hữu",
         "text2": "Bạn chỉ có thể xem tên miền này trong trình quản lý do hiện tại bạn không phải là chủ sở hữu",
-        "title": "Xin chúc mừng! Bạn vừa thêm thành công tên miền DNS này vào Trình đăng ký ENS"
+        "title": "Xin chúc mừng! Bạn vừa thêm thành công tên miền DNS này vào Trình đăng ký OneNames"
       },
       "proof": {
         "text1": "Địa chỉ xuất hiện trong bản ghi file txt của DNS cũng là địa chỉ của bạn",
         "text2": "Nếu bạn biết mình sở hữu tên miền này, hãy thay đổi bản ghi TXT để lưu trữ Địa chỉ Ethereum của bạn và tải lại trang để tiến hành xác minh lại DNSSEC ",
         "title1": "Bạn là chủ sở hữu của địa chỉ này. Hãy thêm tên miền của bạn vào Trình đăng ký ENS ngay",
-        "title2": "Bạn không phải là Người sở hữu DNS của tên miền này, nhưng bất kì ai cũng có thể thêm tên miền này vào trình Đăng ký ENS"
+        "title2": "Bạn không phải là Người sở hữu DNS của tên miền này, nhưng bất kì ai cũng có thể thêm tên miền này vào trình Đăng ký OneNames"
       }
     },
     "viewinmanager": "Xem trong Trình quản lý"
@@ -125,11 +125,11 @@
     "announcements": {
     },
     "howtouse": {
-      "body": "ENS App là một giao diện cho người dùng không rành về kỹ thuật . Cho phép bạn tìm bất cứ tên nào, quản lý địa chỉ, tính năng và tạo tên miền con của mỗi tên.",
+      "body": "OneNames App là một giao diện cho người dùng không rành về kỹ thuật . Cho phép bạn tìm bất cứ tên nào, quản lý địa chỉ, tính năng và tạo tên miền con của mỗi tên.",
       "title": "Cách dùng  ENS "
     },
     "whatisens": {
-      "body": "Ethereum Name Service là một dịch vụ phân tán, mã nguồn mở, có thể mở rộng hệ thống tên dựa trên nền chuỗi khối Ethereum.\nENS giúp hạn chế việc copy hay đánh các địa chỉ quá dài.",
+      "body": "OneNames Service là một dịch vụ phân tán, mã nguồn mở, có thể mở rộng hệ thống tên dựa trên nền chuỗi khối Ethereum.\nENS giúp hạn chế việc copy hay đánh các địa chỉ quá dài.",
       "title": "ENS là gì"
     }
   },
