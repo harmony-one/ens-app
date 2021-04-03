@@ -220,21 +220,22 @@ function DetailsContainer({
 
   return (
     <Details data-testid="name-details">
-      {isOwner && <SetupName initialState={showExplainer} />}
+      {/* {isOwner && <SetupName initialState={showExplainer} />} */}
       {isMigratedToNewRegistry && releaseDeed && (
         <ReleaseDeed domain={domain} isDeedOwner={isDeedOwner} />
       )}
       {parseInt(domain.owner, 16) !== 0 &&
         !loadingIsMigrated &&
         !isMigratedToNewRegistry && (
-          <RegistryMigration
-            account={account}
-            domain={domain}
-            dnssecmode={dnssecmode}
-            refetchIsMigrated={refetchIsMigrated}
-            isParentMigratedToNewRegistry={isParentMigratedToNewRegistry}
-            loadingIsParentMigrated={loadingIsParentMigrated}
-          />
+          <div />
+          // <RegistryMigration
+          //   account={account}
+          //   domain={domain}
+          //   dnssecmode={dnssecmode}
+          //   refetchIsMigrated={refetchIsMigrated}
+          //   isParentMigratedToNewRegistry={isParentMigratedToNewRegistry}
+          //   loadingIsParentMigrated={loadingIsParentMigrated}
+          // />
         )}
       {domainParent ? (
         <DetailsItem uneditable>
@@ -532,13 +533,13 @@ function DetailsContainer({
         )}
       </OwnerFields>
       <HR />
-      <ResolverAndRecords
+      {/* <ResolverAndRecords
         domain={domain}
         isOwner={isOwner}
         refetch={refetch}
         account={account}
         isMigratedToNewRegistry={isMigratedToNewRegistry}
-      />
+      /> */}
       {canClaim(domain) ? (
         <NameClaimTestDomain domain={domain} refetch={refetch} />
       ) : null}
