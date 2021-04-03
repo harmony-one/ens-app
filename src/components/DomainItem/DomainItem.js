@@ -60,7 +60,7 @@ const DomainContainer = styled(Link)`
   transition: 0.2s all;
 
   ${mq.medium`
-    grid-template-columns: 1fr minmax(150px,350px) 100px 50px;
+    grid-template-columns: 1fr minmax(150px,350px) 100px 0;
     grid-template-rows: 39px;
   `}
 
@@ -179,13 +179,13 @@ const Domain = ({ domain, isSubDomain, className, isFavourite, loading }) => {
             </DomainName>
             <ExpiryDate expiryDate={expiryDate} />
             <Label domain={domain} isOwner={isOwner} />
-            <RightContainer>
+            {/* <RightContainer>
               <AddFavourite
                 domain={domain}
                 isSubDomain={isSubDomain}
                 isFavourite={isFavourite}
               />
-            </RightContainer>
+            </RightContainer> */}
           </DomainContainer>
         )
       }}
