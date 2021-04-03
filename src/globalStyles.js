@@ -21,6 +21,6 @@ injectGlobal`
 
     &:visited {
       color: #5284ff
-    } 
+    }
   }
 `

@@ -79,7 +79,7 @@ function getButtonStyles({ type }) {
         &:hover {
           cursor: default
         }
-        
+
       `
     default:
       return ''
