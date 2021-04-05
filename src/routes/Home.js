@@ -84,6 +84,14 @@ const Nav = styled('div')`
     font-weight: 300;
     color: white;
   }
+  ul {
+    display: flex;
+    align-items: center;
+  }
+  li {
+    display: inline-block;
+    padding-right: 30px;
+  }
 `
 
 const NavLink = styled(Link)`
@@ -335,9 +343,24 @@ export default ({ match }) => {
                 {t('c.mynames')}
               </NavLink>
             )} */}
-            <div>
-              <img src="https://assets.website-files.com/5ea98076e2f684f39f95888f/5ea98076e2f684fdc09588b9_harmony_logo.svg" />
-            </div>
+            <ul>
+              <li>
+                <img src="https://assets.website-files.com/5ea98076e2f684f39f95888f/5ea98076e2f684fdc09588b9_harmony_logo.svg" />
+              </li>
+              <li>
+                <a href="https://onenames.gitbook.io/onenames/" target="_blank">
+                  {t('c.about')}
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://onenames.gitbook.io/onenames/faq"
+                  target="_blank"
+                >
+                  {t('c.faq')}
+                </a>
+              </li>
+            </ul>
           </Nav>
           {!loading && (
             <>
