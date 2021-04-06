@@ -82,12 +82,12 @@ const Tabs = ({ domain, pathname, parent, tab }) => {
         >
           {t('singleName.tabs.details')}
         </TabLink>
-        <TabLink
+        {/* <TabLink
           active={pathname === `/name/${name}/subdomains`}
           to={`/name/${name}/subdomains`}
         >
           {t('singleName.tabs.subdomains')}
-        </TabLink>
+        </TabLink> */}
       </TabContainer>
     )
   )

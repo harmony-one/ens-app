@@ -110,7 +110,7 @@ function Name({ details: domain, name, pathname, type, refetch }) {
                   : t('c.Controller')}
               </Owner>
             )}
-            <Favourite domain={domain} />
+            {/* <Favourite domain={domain} /> */}
             {smallBP && (
               <Tabs
                 pathname={pathname}
