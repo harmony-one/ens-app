@@ -31,3 +31,9 @@ ganache.log
 
 ens-app.code-workspace
 data
+
+# Firebase
+
+.firebase/
+.firebaserc
+firebase.json
