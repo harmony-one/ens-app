@@ -734,7 +734,7 @@ function ViewOnly({
           {copyToClipboard && <CopyToClipboard value={value} />}
         </DetailsValue>
 
-        <Action>
+        {/* <Action>
           {editButton ? (
             <Tooltip
               text={getToolTipMessage({ keyName, t, isExpiredRegistrant })}
@@ -767,7 +767,7 @@ function ViewOnly({
               disabled={true}
             />
           )}
-        </Action>
+        </Action> */}
       </DetailsContent>
     </DetailsEditableContainer>
   )
