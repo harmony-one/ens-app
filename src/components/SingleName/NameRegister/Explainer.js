@@ -77,9 +77,9 @@ const Explainer = ({ step, waitPercentComplete, waitTime }) => {
       <Header>
         <div>
           <h2>{titles[step]}</h2>
-          <p>{t('register.favourite')}</p>
+          {/* <p>{t('register.favourite')}</p> */}
         </div>
-        {hasPermission() ? (
+        {/* {hasPermission() ? (
           <NotifyButtonDisabled>
             <Tick style={{ marginRight: 5 }} />
             {t('register.notify')}
@@ -89,7 +89,7 @@ const Explainer = ({ step, waitPercentComplete, waitTime }) => {
             <Bell style={{ marginRight: 5 }} />
             {t('register.notify')}
           </NotifyButton>
-        )}
+        )} */}
       </Header>
 
       <Steps>
