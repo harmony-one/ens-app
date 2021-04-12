@@ -239,10 +239,10 @@ function DetailsContainer({
         )}
       {domainParent ? (
         <DetailsItem uneditable>
-          <DetailsKey>{t('c.parent')}</DetailsKey>
+          {/* <DetailsKey>{t('c.parent')}</DetailsKey>
           <DetailsValue>
             <Link to={`/name/${domainParent}`}>{domainParent}</Link>
-          </DetailsValue>
+          </DetailsValue> */}
         </DetailsItem>
       ) : (
         ''
@@ -262,7 +262,7 @@ function DetailsContainer({
               mutation={SET_REGISTRANT}
               refetch={refetch}
               confirm={true}
-              copyToClipboard={true}
+              copyToClipboard={false}
             />
             <DetailsItemEditable
               domain={domain}
@@ -277,7 +277,7 @@ function DetailsContainer({
               mutation={isRegistrant ? RECLAIM : SET_OWNER}
               refetch={refetch}
               confirm={true}
-              copyToClipboard={true}
+              copyToClipboard={false}
             />
           </>
         ) : domain.parent === 'one' && !domain.isNewRegistrar ? (

@@ -77,9 +77,6 @@ const NetworkStatus = styled('div')`
 const Nav = styled('div')`
   display: flex;
   justify-content: flex-start;
-  ${mq.small`
-    justify-content: flex-start;
-  `}
   a {
     font-weight: 300;
     color: white;
@@ -87,10 +84,19 @@ const Nav = styled('div')`
   ul {
     display: flex;
     align-items: center;
+    padding: 0;
+    margin: 0;
+    ${mq.small`
+      font-size: 16px;
+    `}
   }
   li {
     display: inline-block;
     padding-right: 30px;
+    font-size: 14px;
+    ${mq.small`
+      font-size: 16px;
+    `}
   }
 `
 
@@ -144,9 +150,9 @@ const Hero = styled('section')`
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
   ${mq.medium`
     padding: 0 20px 0;
-    height: 100vh;
   `}
 `
 

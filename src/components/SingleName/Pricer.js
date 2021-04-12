@@ -48,8 +48,8 @@ function PricerInner({
   return (
     <>
       <PricingContainer className={className} ref={reference}>
-        <Years years={years} setYears={setYears} />
-        <Chain />
+        {/* <Years years={years} setYears={setYears} />
+        <Chain /> */}
         <Price
           price={price}
           gasPrice={gasPrice}
@@ -60,7 +60,7 @@ function PricerInner({
           underPremium={underPremium}
         />
       </PricingContainer>
-      {displayGas && gasPrice && (
+      {/* {displayGas && gasPrice && (
         <div>
           <EthRegistrationGasPrice
             price={price}
@@ -72,7 +72,7 @@ function PricerInner({
             underPremium={underPremium}
           />
         </div>
-      )}
+      )} */}
     </>
   )
 }

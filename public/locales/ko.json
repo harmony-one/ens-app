@@ -164,7 +164,7 @@
     "gasDescription": "Estimated Gas Price (Step 1 + Step 3). The gas price will flucuate.",
     "pricePerAmount": "Price per amount of time selected",
     "registrationPeriodLabel": "등록 기간",
-    "registrationPriceLabel": "Registration price to pay",
+    "registrationPriceLabel": "Registration for 1 year",
     "totalDescription": "Estimated Total (Price + Gas). The gas price is based at {{gasPriceToGweiFast}} Gwei",
     "totalPriceLabel": "결제할 총 금액",
     "yearUnit": "년"
