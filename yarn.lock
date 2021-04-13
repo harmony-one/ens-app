@@ -1521,9 +1521,9 @@
     lodash "^4.17.11"
     web3 "^1.3.0"
 
-"@ensdomains/ui@git+ssh://git@github.com:harmony-one/ui.git#one-names":
+"@ensdomains/ui@git+ssh://git@github.com:harmony-one/ui.git#efbb02652d983f8d92da54419192495d4774ef5c":
   version "3.0.72"
-  resolved "git+ssh://git@github.com:harmony-one/ui.git#aa7336e9217d3cf32771c56f3827f0de53e42430"
+  resolved "git+ssh://git@github.com:harmony-one/ui.git#efbb02652d983f8d92da54419192495d4774ef5c"
   dependencies:
     "@0xproject/utils" "^2.0.2"
     "@babel/plugin-proposal-class-properties" "^7.8.3"

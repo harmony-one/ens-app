@@ -15,7 +15,7 @@
     "@ensdomains/address-encoder": "^0.2.6",
     "@ensdomains/mock": "^2.0.36",
     "@ensdomains/react-ens-address": "^0.0.27",
-    "@ensdomains/ui": "git+ssh://git@github.com:harmony-one/ui.git#one-names",
+    "@ensdomains/ui": "git+ssh://git@github.com:harmony-one/ui.git#efbb02652d983f8d92da54419192495d4774ef5c",
     "apollo-cache-inmemory": "^1.2.9",
     "apollo-client": "^2.4.5",
     "apollo-link": "^1.2.2",
@@ -133,6 +133,6 @@
     ]
   },
   "engines": {
-    "node": "v14"
+    "node": "v12"
   }
 }
