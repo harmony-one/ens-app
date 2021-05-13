@@ -42,7 +42,7 @@ import Pencil from '../Forms/Pencil'
 import DefaultInfo from '../Icons/Info'
 import DefaultPendingTx from '../PendingTx'
 import DefaultPricer from './Pricer'
-import DefaultAddressInput from '@ensdomains/react-ens-address'
+import DefaultAddressInput from 'react-one-ens-address'
 import CopyToClipboard from '../CopyToClipboard/'
 
 const AddressInput = styled(DefaultAddressInput)`
