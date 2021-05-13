@@ -487,7 +487,7 @@ const Editable = ({
                   ) : (
                     value
                   )}
-                  {/* {copyToClipboard && <CopyToClipboard value={value} />} */}
+                  {copyToClipboard && <CopyToClipboard value={value} />}
                 </DetailsValue>
               </>
             )}
@@ -512,36 +512,35 @@ const Editable = ({
                 }}
               />
             ) : (
-              <div />
-              // <Action
-              //   initial={{
-              //     opacity: 0,
-              //     x: 0
-              //   }}
-              //   animate={{
-              //     opacity: 1,
-              //     x: 0
-              //   }}
-              //   exit={{
-              //     opacity: 0,
-              //     x: 0
-              //   }}
-              // >
-              //   {editButton ? (
-              //     <EditButton
-              //       type={editButtonType}
-              //       onClick={startEditing}
-              //       data-testid={`edit-${keyName.toLowerCase()}`}
-              //     >
-              //       {editButton}
-              //     </EditButton>
-              //   ) : (
-              //     <Pencil
-              //       onClick={startEditing}
-              //       data-testid={`edit-${keyName.toLowerCase()}`}
-              //     />
-              //   )}
-              // </Action>
+              <Action
+                initial={{
+                  opacity: 0,
+                  x: 0
+                }}
+                animate={{
+                  opacity: 1,
+                  x: 0
+                }}
+                exit={{
+                  opacity: 0,
+                  x: 0
+                }}
+              >
+                {editButton ? (
+                  <EditButton
+                    type={editButtonType}
+                    onClick={startEditing}
+                    data-testid={`edit-${keyName.toLowerCase()}`}
+                  >
+                    {editButton}
+                  </EditButton>
+                ) : (
+                  <Pencil
+                    onClick={startEditing}
+                    data-testid={`edit-${keyName.toLowerCase()}`}
+                  />
+                )}
+              </Action>
             )}
             {editing && canDelete ? (
               <Action>
@@ -734,7 +733,7 @@ function ViewOnly({
           {copyToClipboard && <CopyToClipboard value={value} />}
         </DetailsValue>
 
-        {/* <Action>
+        <Action>
           {editButton ? (
             <Tooltip
               text={getToolTipMessage({ keyName, t, isExpiredRegistrant })}
@@ -767,7 +766,7 @@ function ViewOnly({
               disabled={true}
             />
           )}
-        </Action> */}
+        </Action>
       </DetailsContent>
     </DetailsEditableContainer>
   )

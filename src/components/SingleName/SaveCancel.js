@@ -106,7 +106,8 @@ export const SaveCancel = React.forwardRef(
       confirm,
       warningMessage,
       extraDataComponent,
-      isValid = true
+      isValid = true,
+      showCancel = true
     },
     ref
   ) => {
@@ -114,9 +115,11 @@ export const SaveCancel = React.forwardRef(
     return (
       <SaveCancelContainer className={className} ref={ref}>
         {warningMessage ? <Warning>{warningMessage}</Warning> : null}
-        <Cancel data-testid="cancel" type="hollow" onClick={stopEditing}>
-          {t(`c.cancel`)}
-        </Cancel>
+        {showCancel ? (
+          <Cancel data-testid="cancel" type="hollow" onClick={stopEditing}>
+            {t(`c.cancel`)}
+          </Cancel>
+        ) : null}
         <ActionButton
           disabled={disabled}
           mutation={mutation}

@@ -15,7 +15,8 @@ const cache = new InMemoryCache({
 
 const endpoints = {
   '1': 'https://api.thegraph.com/subgraphs/name/ensdomains/ens',
-  '3': 'https://api.thegraph.com/subgraphs/name/ensdomains/ensropsten',
+  // '3': 'https://api.thegraph.com/subgraphs/name/ensdomains/ensropsten',
+  '3': 'http://localhost:8000/subgraphs/name/graphprotocol/ens',
   '4': 'https://api.thegraph.com/subgraphs/name/ensdomains/ensrinkeby',
   '5': 'https://api.thegraph.com/subgraphs/name/ensdomains/ensgoerli'
 }

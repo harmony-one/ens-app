@@ -1,15 +1,18 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useQuery } from 'react-apollo'
 import { useTranslation, Trans } from 'react-i18next'
 import styled from '@emotion/styled'
 import { Link, Route } from 'react-router-dom'
 import mq from 'mediaQuery'
+import { Mutation } from 'react-apollo'
+import SaveCancel from '../SingleName/SaveCancel'
 
 import {
   SET_OWNER,
   SET_SUBNODE_OWNER,
   SET_REGISTRANT,
   RECLAIM,
+  SET_NAME,
   RENEW
 } from '../../graphql/mutations'
 import { IS_MIGRATED } from '../../graphql/queries'
@@ -37,6 +40,8 @@ import ResolverAndRecords from './ResolverAndRecords'
 import NameClaimTestDomain from './NameClaimTestDomain'
 import RegistryMigration from './RegistryMigration'
 import ReleaseDeed from './ReleaseDeed'
+import getENS from '../../api/ens'
+import Address from '../Address'
 
 const Details = styled('section')`
   padding: 20px;
@@ -264,21 +269,6 @@ function DetailsContainer({
               confirm={true}
               copyToClipboard={false}
             />
-            <DetailsItemEditable
-              domain={domain}
-              keyName="Controller"
-              value={domainOwner}
-              canEdit={isRegistrant || (isOwner && isMigratedToNewRegistry)}
-              deedOwner={domain.deedOwner}
-              isDeedOwner={isDeedOwner}
-              type="address"
-              editButton={isRegistrant ? t('c.set') : t('c.transfer')}
-              mutationButton={isRegistrant ? t('c.set') : t('c.transfer')}
-              mutation={isRegistrant ? RECLAIM : SET_OWNER}
-              refetch={refetch}
-              confirm={true}
-              copyToClipboard={false}
-            />
           </>
         ) : domain.parent === 'one' && !domain.isNewRegistrar ? (
           <>
@@ -294,21 +284,6 @@ function DetailsContainer({
                 </AddressLink>
               </DetailsValue>
             </DetailsItem>
-            <DetailsItemEditable
-              domain={domain}
-              keyName="Controller"
-              value={domain.owner}
-              canEdit={isRegistrant || (isOwner && isMigratedToNewRegistry)}
-              deedOwner={domain.deedOwner}
-              isDeedOwner={isDeedOwner}
-              type="address"
-              editButton={isRegistrant ? t('c.set') : t('c.transfer')}
-              mutationButton={isRegistrant ? t('c.set') : t('c.transfer')}
-              mutation={isRegistrant ? RECLAIM : SET_OWNER}
-              refetch={refetch}
-              confirm={true}
-              copyToClipboard={true}
-            />
           </>
         ) : domain.isDNSRegistrar ? (
           <DetailsItem uneditable>
@@ -373,22 +348,38 @@ function DetailsContainer({
           </DetailsItem>
         ) : (
           // Either subdomain, or .test
-          <DetailsItemEditable
-            domain={domain}
-            keyName="Controller"
-            value={domain.owner}
-            canEdit={(isOwner || isOwnerOfParent) && isMigratedToNewRegistry}
-            deedOwner={domain.deedOwner}
-            isDeedOwner={isDeedOwner}
-            outOfSync={outOfSync}
-            type="address"
-            editButton={isOwnerOfParent ? t('c.set') : t('c.transfer')}
-            mutationButton={isOwnerOfParent ? t('c.set') : t('c.transfer')}
-            mutation={isOwnerOfParent ? SET_SUBNODE_OWNER : SET_OWNER}
-            refetch={refetch}
-            confirm={true}
-            copyToClipboard={true}
-          />
+          <>
+            {/*<DetailsItemEditable*/}
+            {/*  domain={domain}*/}
+            {/*  keyName="Controller"*/}
+            {/*  value={domain.owner}*/}
+            {/*  canEdit={(isOwner || isOwnerOfParent) && isMigratedToNewRegistry}*/}
+            {/*  deedOwner={domain.deedOwner}*/}
+            {/*  isDeedOwner={isDeedOwner}*/}
+            {/*  outOfSync={outOfSync}*/}
+            {/*  type="address"*/}
+            {/*  editButton={isOwnerOfParent ? t('c.set') : t('c.transfer')}*/}
+            {/*  mutationButton={isOwnerOfParent ? t('c.set') : t('c.transfer')}*/}
+            {/*  mutation={isOwnerOfParent ? SET_SUBNODE_OWNER : SET_OWNER}*/}
+            {/*  refetch={refetch}*/}
+            {/*  confirm={true}*/}
+            {/*  copyToClipboard={true}*/}
+            {/*/>*/}
+            <DetailsItemEditable
+              domain={domain}
+              keyName="registrant"
+              value={domainOwner}
+              canEdit={isRegistrant && !isExpired}
+              isExpiredRegistrant={isRegistrant && isExpired}
+              type="address"
+              editButton={t('c.transfer')}
+              mutationButton={t('c.transfer')}
+              mutation={SET_REGISTRANT}
+              refetch={refetch}
+              confirm={true}
+              copyToClipboard={false}
+            />
+          </>
         )}
         {/* To be replaced with a logic a function to detect dnsregistrar */}
         {domain.isDNSRegistrar ? (
@@ -532,6 +523,7 @@ function DetailsContainer({
           ''
         )}
       </OwnerFields>
+      {isOwner && <ReverseRecordBox domain={domain} />}
       <HR />
       {/* <ResolverAndRecords
         domain={domain}
@@ -546,6 +538,88 @@ function DetailsContainer({
     </Details>
   )
 }
+
+const ReverseRecordBox = ({ domain }) => {
+  const [revAddress, setRevAddress] = useState(null)
+
+  useEffect(() => {
+    setTimeout(async () => {
+      try {
+        const ens = await getENS()
+
+        const rAddress = await ens.getName(domain.addr)
+
+        setRevAddress(rAddress && rAddress.name)
+      } catch (e) {}
+    }, 100)
+  }, [])
+
+  return (
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+      }}
+    >
+      <div>
+        {revAddress ? (
+          revAddress === domain.name ? (
+            <p>
+              This address {domain.addr} is already using reverse record to{' '}
+              {revAddress}
+            </p>
+          ) : (
+            <p>
+              For your address {domain.addr} it is already set reverse record to{' '}
+              {revAddress}.<br /> You can change it to {domain.name}
+            </p>
+          )
+        ) : (
+          <p>
+            If you want to display this domain for your address {domain.addr}{' '}
+            you need to create reverse record
+          </p>
+        )}
+      </div>
+      <div>
+        {revAddress && revAddress === domain.name ? null : (
+          <Mutation
+            mutation={SET_NAME}
+            variables={{
+              name: domain.name
+            }}
+            onCompleted={async data => {
+              setTimeout(async () => {
+                const ens = await getENS()
+
+                const rAddress = await ens.getName(domain.addr)
+
+                setRevAddress(rAddress && rAddress.name)
+              }, 5000)
+              // startPending(Object.values(data)[0])
+
+              console.log(data)
+            }}
+          >
+            {mutation => (
+              <SaveCancel
+                showCancel={false}
+                mutation={mutation}
+                stopEditing={() => {}}
+                isValid={true}
+                mutationButton={
+                  revAddress ? 'Change reverse record' : 'Set Reverse record'
+                }
+              />
+            )}
+          </Mutation>
+        )}
+      </div>
+    </div>
+  )
+}
+
 function NameDetails({
   domain,
   isOwner,
