@@ -13,7 +13,9 @@ import {
   SET_REGISTRANT,
   RECLAIM,
   SET_NAME,
-  RENEW
+  RENEW,
+  SET_ADDR,
+  SET_ADDRESS
 } from '../../graphql/mutations'
 import { IS_MIGRATED } from '../../graphql/queries'
 
@@ -258,13 +260,29 @@ function DetailsContainer({
             <DetailsItemEditable
               domain={domain}
               keyName="registrant"
-              value={registrant}
-              canEdit={isRegistrant && !isExpired}
-              isExpiredRegistrant={isRegistrant && isExpired}
+              value={domain.addr}
+              canEdit={isOwner && !isExpired}
+              isExpiredRegistrant={isExpired}
+              type="address"
+              editButton={t('c.set')}
+              mutationButton={t('c.set')}
+              mutation={SET_ADDRESS}
+              refetch={refetch}
+              confirm={true}
+              copyToClipboard={false}
+              variableName="recordValue"
+            />
+            <DetailsItemEditable
+              domain={domain}
+              keyName="Controller"
+              value={domainOwner}
+              canEdit={isOwner && isMigratedToNewRegistry}
+              deedOwner={domain.deedOwner}
+              isDeedOwner={isDeedOwner}
               type="address"
               editButton={t('c.transfer')}
               mutationButton={t('c.transfer')}
-              mutation={SET_REGISTRANT}
+              mutation={SET_OWNER}
               refetch={refetch}
               confirm={true}
               copyToClipboard={false}
@@ -284,6 +302,21 @@ function DetailsContainer({
                 </AddressLink>
               </DetailsValue>
             </DetailsItem>
+            <DetailsItemEditable
+              domain={domain}
+              keyName="Controller"
+              value={domainOwner}
+              canEdit={isOwner && isMigratedToNewRegistry}
+              deedOwner={domain.deedOwner}
+              isDeedOwner={isDeedOwner}
+              type="address"
+              editButton={t('c.transfer')}
+              mutationButton={t('c.transfer')}
+              mutation={SET_OWNER}
+              refetch={refetch}
+              confirm={true}
+              copyToClipboard={false}
+            />
           </>
         ) : domain.isDNSRegistrar ? (
           <DetailsItem uneditable>
@@ -349,35 +382,36 @@ function DetailsContainer({
         ) : (
           // Either subdomain, or .test
           <>
-            {/*<DetailsItemEditable*/}
-            {/*  domain={domain}*/}
-            {/*  keyName="Controller"*/}
-            {/*  value={domain.owner}*/}
-            {/*  canEdit={(isOwner || isOwnerOfParent) && isMigratedToNewRegistry}*/}
-            {/*  deedOwner={domain.deedOwner}*/}
-            {/*  isDeedOwner={isDeedOwner}*/}
-            {/*  outOfSync={outOfSync}*/}
-            {/*  type="address"*/}
-            {/*  editButton={isOwnerOfParent ? t('c.set') : t('c.transfer')}*/}
-            {/*  mutationButton={isOwnerOfParent ? t('c.set') : t('c.transfer')}*/}
-            {/*  mutation={isOwnerOfParent ? SET_SUBNODE_OWNER : SET_OWNER}*/}
-            {/*  refetch={refetch}*/}
-            {/*  confirm={true}*/}
-            {/*  copyToClipboard={true}*/}
-            {/*/>*/}
             <DetailsItemEditable
               domain={domain}
               keyName="registrant"
-              value={domainOwner}
-              canEdit={isRegistrant && !isExpired}
-              isExpiredRegistrant={isRegistrant && isExpired}
+              value={domain.addr}
+              canEdit={isOwner && !isExpired}
+              isExpiredRegistrant={isExpired}
               type="address"
-              editButton={t('c.transfer')}
-              mutationButton={t('c.transfer')}
-              mutation={SET_REGISTRANT}
+              editButton={t('c.set')}
+              mutationButton={t('c.set')}
+              mutation={SET_ADDRESS}
               refetch={refetch}
               confirm={true}
               copyToClipboard={false}
+              variableName="recordValue"
+            />
+            <DetailsItemEditable
+              domain={domain}
+              keyName="Controller"
+              value={domain.owner}
+              canEdit={(isOwner || isOwnerOfParent) && isMigratedToNewRegistry}
+              deedOwner={domain.deedOwner}
+              isDeedOwner={isDeedOwner}
+              outOfSync={outOfSync}
+              type="address"
+              editButton={isOwnerOfParent ? t('c.set') : t('c.transfer')}
+              mutationButton={isOwnerOfParent ? t('c.set') : t('c.transfer')}
+              mutation={isOwnerOfParent ? SET_SUBNODE_OWNER : SET_OWNER}
+              refetch={refetch}
+              confirm={true}
+              copyToClipboard={true}
             />
           </>
         )}
@@ -552,7 +586,7 @@ const ReverseRecordBox = ({ domain }) => {
         setRevAddress(rAddress && rAddress.name)
       } catch (e) {}
     }, 100)
-  }, [])
+  }, [domain.addr])
 
   return (
     <div

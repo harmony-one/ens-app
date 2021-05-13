@@ -435,7 +435,11 @@ const Editable = ({
           <DetailsContent editing={editing}>
             {showLabel && (
               <>
-                <DetailsKey>{t(`c.${keyName}`)}</DetailsKey>
+                {!['Controller', 'registrant'].includes(keyName) && (
+                  <DetailsKey>{t(`c.${keyName}`)}</DetailsKey>
+                )}
+                {keyName === 'Controller' && <DetailsKey>Owner</DetailsKey>}
+                {keyName === 'registrant' && <DetailsKey>Address</DetailsKey>}
                 <DetailsValue
                   editing={editing}
                   editable
@@ -718,7 +722,11 @@ function ViewOnly({
   return (
     <DetailsEditableContainer>
       <DetailsContent>
-        <DetailsKey>{t(`c.${keyName}`)}</DetailsKey>
+        {!['Controller', 'registrant'].includes(keyName) && (
+          <DetailsKey>{t(`c.${keyName}`)}</DetailsKey>
+        )}
+        {keyName === 'Controller' && <DetailsKey>Owner</DetailsKey>}
+        {keyName === 'registrant' && <DetailsKey>Address</DetailsKey>}
         <DetailsValue data-testid={`details-value-${keyName.toLowerCase()}`}>
           {type === 'address' ? (
             <AddressLink address={value}>
