@@ -7,9 +7,9 @@ import ENSLogo from '../assets/ensIconLogo.svg'
 import LogoTyped from '../assets/TypeLogo'
 
 const IconLogo = styled('img')`
-  width: 30px;
+  width: 160px;
   ${mq.medium`
-    width: 34px
+    width: 160px
   `}
 `
 

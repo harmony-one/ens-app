@@ -57,7 +57,16 @@ const Input = styled(DefaultInput)`
 
 const EthRegistrationGasPrice = ({ price, ethUsdPrice, gasPrice }) => {
   const { t } = useTranslation()
-  const ethVal = new EthVal(`${price}`).toEth()
+
+  let ethVal = 0
+
+  try {
+    ethVal = new EthVal(`${price || 0}`).toEth()
+  } catch (e) {
+    console.log('---price----', price)
+    console.error(e)
+  }
+
   const registerGasSlow = new EthVal(`${TOGAL_GAS_WEI * gasPrice.slow}`).toEth()
   const registerGasFast = new EthVal(`${TOGAL_GAS_WEI * gasPrice.fast}`).toEth()
   const gasPriceToGweiSlow = new EthVal(`${gasPrice.slow}`).toGwei()
@@ -73,9 +82,9 @@ const EthRegistrationGasPrice = ({ price, ethUsdPrice, gasPrice }) => {
   return (
     <PriceContainer>
       <TotalValue>
-        {ethVal.toFixed(3)} ETH + up to {registerGasFast.toFixed(3)} ETH gas fee
-        = up to {totalFast.toFixed(3)} ETH
-        {ethVal && ethUsdPrice && (
+        {ethVal.toFixed(3)} ONE + up to {registerGasFast.toFixed(3)} ONE gas fee
+        = up to {totalFast.toFixed(3)} ONE
+        {ethVal && ethUsdPrice > 0 && (
           <USD>
             {' '}
             ${totalInUsdFast.toFixed(2)}

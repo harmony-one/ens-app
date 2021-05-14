@@ -60,7 +60,7 @@ const Logo = styled(DefaultLogo)`
       margin-top: 30px;
       content: '';
       width: 1px;
-      right: 35px;
+      right: 0px;
       top: 0;
       position: absolute;
     }

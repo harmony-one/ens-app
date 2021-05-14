@@ -42,7 +42,7 @@ import Pencil from '../Forms/Pencil'
 import DefaultInfo from '../Icons/Info'
 import DefaultPendingTx from '../PendingTx'
 import DefaultPricer from './Pricer'
-import DefaultAddressInput from '@ensdomains/react-ens-address'
+import DefaultAddressInput from 'react-one-ens-address'
 import CopyToClipboard from '../CopyToClipboard/'
 
 const AddressInput = styled(DefaultAddressInput)`
@@ -174,7 +174,7 @@ function getMessages({ keyName, parent, deedOwner, isDeedOwner, t }) {
   let [newValue, newType] = getDefaultMessage(keyName, t)
   if (
     keyName === 'Owner' &&
-    parent === 'eth' &&
+    parent === 'one' &&
     parseInt(deedOwner, 16) !== 0
   ) {
     newValue = t('singleName.messages.noresolver')
@@ -435,7 +435,11 @@ const Editable = ({
           <DetailsContent editing={editing}>
             {showLabel && (
               <>
-                <DetailsKey>{t(`c.${keyName}`)}</DetailsKey>
+                {!['Controller', 'registrant'].includes(keyName) && (
+                  <DetailsKey>{t(`c.${keyName}`)}</DetailsKey>
+                )}
+                {keyName === 'Controller' && <DetailsKey>Owner</DetailsKey>}
+                {keyName === 'registrant' && <DetailsKey>Address</DetailsKey>}
                 <DetailsValue
                   editing={editing}
                   editable
@@ -718,7 +722,11 @@ function ViewOnly({
   return (
     <DetailsEditableContainer>
       <DetailsContent>
-        <DetailsKey>{t(`c.${keyName}`)}</DetailsKey>
+        {!['Controller', 'registrant'].includes(keyName) && (
+          <DetailsKey>{t(`c.${keyName}`)}</DetailsKey>
+        )}
+        {keyName === 'Controller' && <DetailsKey>Owner</DetailsKey>}
+        {keyName === 'registrant' && <DetailsKey>Address</DetailsKey>}
         <DetailsValue data-testid={`details-value-${keyName.toLowerCase()}`}>
           {type === 'address' ? (
             <AddressLink address={value}>

@@ -59,7 +59,7 @@ const resolvers = {
         case 42:
           return 'kovan'
         default:
-          return 'private'
+          return 'harmony'
       }
     }
   },
@@ -79,7 +79,7 @@ const resolvers = {
     publicResolver: async () => {
       try {
         const ens = getENS()
-        const resolver = await ens.getAddress('resolver.eth')
+        const resolver = await ens.getAddress('resolver.one')
         return {
           address: resolver,
           __typename: 'Resolver'

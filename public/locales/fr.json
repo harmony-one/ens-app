@@ -128,10 +128,10 @@
     },
     "howtouse": {
       "body": "L'application ENS est une interface graphique pour des utilisateurs non techniques. Elle vous permet de rechercher n'importe quel nom, de créer des sous-domaines et de gérer leurs adresses et resources.",
-      "title": "Comment utiliser ENS"
+      "title": "Comment utiliser OneNames"
     },
     "whatisens": {
-      "body": "Ethereum Name Service est un système de nommage distribué, ouvert et extensible basé sur la blockchain Ethereum. ENS élimine le besoin de copier ou taper de longues adresses Ethereum. ",
+      "body": "OneNames Service est un système de nommage distribué, ouvert et extensible basé sur la blockchain Ethereum. ENS élimine le besoin de copier ou taper de longues adresses Ethereum. ",
       "title": "Ce que c'est"
     }
   },
@@ -166,7 +166,7 @@
     "gasDescription": "Estimated Gas Price (Step 1 + Step 3). The gas price will flucuate.",
     "pricePerAmount": "Price per amount of time selected",
     "registrationPeriodLabel": "Période d'enregistrement",
-    "registrationPriceLabel": "Registration price to pay",
+    "registrationPriceLabel": "Registration for 1 year",
     "totalDescription": "Estimated Total (Price + Gas). The gas price is based at {{gasPriceToGweiFast}} Gwei",
     "totalPriceLabel": "Prix ​​total à payer",
     "yearUnit": "année"
@@ -299,7 +299,7 @@
         "title": "1. Set Resolver"
       },
       "step2": {
-        "text": "Once you have set the Resolver, you can then add records by clicking the ‘ADD/EDIT RECORD’ in the ‘records’ field. Find 'addresses' and then 'ETH' in the dropdown, paste in your address and then click confirm below and then in the modal. Adding your ethereum address will allow you to point your wallet to your name in the next step.",
+        "text": "Once you have set the Resolver, you can then add records by clicking the ‘ADD/EDIT RECORD’ in the ‘records’ field. Find 'addresses' and then 'ONE' in the dropdown, paste in your address and then click confirm below and then in the modal. Adding your ethereum address will allow you to point your wallet to your name in the next step.",
         "title": "2. Set Address"
       },
       "step3": {

@@ -130,7 +130,7 @@ function SideNav({ match, isMenuOpen, toggleMenu }) {
     <SideNavContainer isMenuOpen={isMenuOpen}>
       <NetworkInformation />
       <ul data-testid="sitenav">
-        {accounts && accounts.length > 0 ? (
+        {/* {accounts && accounts.length > 0 ? (
           <li>
             <NavLink
               onClick={toggleMenu}
@@ -151,15 +151,18 @@ function SideNav({ match, isMenuOpen, toggleMenu }) {
             <Heart active={url === '/favourites'} />
             <span>{t('c.favourites')}</span>
           </NavLink>
-        </li>
+        </li> */}
         <li>
-          <NavLink onClick={toggleMenu} active={url === '/faq'} to="/faq">
+          <ThirdPartyLink
+            href="https://onenames.gitbook.io/onenames/faq"
+            target="_blank"
+          >
             <SpeechBubble />
             <span>{t('c.faq')}</span>
-          </NavLink>
+          </ThirdPartyLink>
         </li>
         <li>
-          <ThirdPartyLink href={aboutPageURL()}>
+          <ThirdPartyLink href={aboutPageURL()} target="_blank">
             <SpeechBubble />
             <span>{t('c.about')}</span>
           </ThirdPartyLink>

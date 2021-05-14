@@ -15,21 +15,23 @@ const cache = new InMemoryCache({
 
 const endpoints = {
   '1': 'https://api.thegraph.com/subgraphs/name/ensdomains/ens',
-  '3': 'https://api.thegraph.com/subgraphs/name/ensdomains/ensropsten',
+  // '3': 'https://api.thegraph.com/subgraphs/name/ensdomains/ensropsten',
+  '3': 'http://localhost:8000/subgraphs/name/graphprotocol/ens',
   '4': 'https://api.thegraph.com/subgraphs/name/ensdomains/ensrinkeby',
   '5': 'https://api.thegraph.com/subgraphs/name/ensdomains/ensgoerli'
 }
 
 function getGraphQLAPI(network) {
   if (network > 100 && process.env.REACT_APP_GRAPH_NODE_URI) {
-    return process.env.REACT_APP_GRAPH_NODE_URI
+    return endpoints['3']
+    // return process.env.REACT_APP_GRAPH_NODE_URI
   }
 
   if (endpoints[network]) {
     return endpoints[network]
   }
 
-  return endpoints['1']
+  return endpoints['3']
 }
 
 const stateLink = withClientState({

@@ -70,8 +70,8 @@ const Price = ({
   return (
     <PriceContainer>
       <Value>
-        {ethPrice} ETH
-        {ethVal && ethUsdPrice && (
+        {ethPrice} ONE
+        {ethVal && ethUsdPrice > 0 && (
           <USD>
             {withPremium}${usdPremium}
             USD

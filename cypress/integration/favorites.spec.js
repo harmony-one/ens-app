@@ -25,7 +25,7 @@ describe('Favorites', () => {
     cy.visit(`${ROOT}/favourites`)
 
     cy.getByTestId('favourites-container').within(container => {
-      cy.queryByText('resolver.eth', { exact: false }).should('exist')
+      cy.queryByText('resolver.one', { exact: false }).should('exist')
       cy.queryByText('Expires', { exact: false }).should('exist')
     })
 

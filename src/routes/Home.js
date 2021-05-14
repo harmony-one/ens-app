@@ -11,7 +11,6 @@ import mq from 'mediaQuery'
 import GlobalState from '../globalState'
 import SearchDefault from '../components/SearchName/Search'
 import NoAccountsDefault from '../components/NoAccounts/NoAccountsModal'
-import bg from '../assets/heroBG.jpg'
 import useNetworkInfo from '../components/NetworkInformation/useNetworkInfo'
 import { ExternalButtonLink } from '../components/Forms/Button'
 import TextBubbleDefault from '../components/Icons/TextBubble'
@@ -23,7 +22,8 @@ import { aboutPageURL } from '../utils/utils'
 import { connect, disconnect } from '../api/web3modal'
 
 const HeroTop = styled('div')`
-  display: grid;
+  display: flex;
+  justify-content: space-between;
   padding: 20px;
   position: absolute;
   left: 0;
@@ -39,6 +39,7 @@ const NoAccounts = styled(NoAccountsDefault)``
 
 const Network = styled('div')`
   margin-bottom: 5px;
+  text-align: center;
 `
 const Name = styled('span')`
   margin-left: 5px;
@@ -75,13 +76,27 @@ const NetworkStatus = styled('div')`
 
 const Nav = styled('div')`
   display: flex;
-  justify-content: center;
-  ${mq.small`
-    justify-content: flex-end;
-  `}
+  justify-content: flex-start;
   a {
     font-weight: 300;
     color: white;
+  }
+  ul {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    ${mq.small`
+      font-size: 16px;
+    `}
+  }
+  li {
+    display: inline-block;
+    padding-right: 30px;
+    font-size: 14px;
+    ${mq.small`
+      font-size: 16px;
+    `}
   }
 `
 
@@ -129,16 +144,15 @@ const HowToUse = styled(HowToUseDefault)`
 `
 
 const Hero = styled('section')`
-  background: url(${bg});
-  background-size: cover;
+  background-color: #00b0ef;
   padding: 60px 20px 20px;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
   ${mq.medium`
     padding: 0 20px 0;
-    height: 600px;
   `}
 `
 
@@ -251,7 +265,7 @@ const LogoLarge = styled(motion.img)`
   width: 50%;
   margin: 0 auto 0;
   ${mq.medium`
-    width: 223px;
+    width: 323px;
   `}
 `
 
@@ -326,13 +340,41 @@ export default ({ match }) => {
     <>
       <Hero>
         <HeroTop>
+          <Nav>
+            {/* {accounts?.length > 0 && (
+              <NavLink
+                active={url === '/address/' + accounts[0]}
+                to={'/address/' + accounts[0]}
+              >
+                {t('c.mynames')}
+              </NavLink>
+            )} */}
+            <ul>
+              <li>
+                <img src="https://crazy.one/images/harmony-logo-only.svg" />
+              </li>
+              <li>
+                <a href="https://onenames.gitbook.io/onenames/" target="_blank">
+                  {t('c.about')}
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://onenames.gitbook.io/onenames/faq"
+                  target="_blank"
+                >
+                  {t('c.faq')}
+                </a>
+              </li>
+            </ul>
+          </Nav>
           {!loading && (
             <>
               <NetworkStatus>
                 <Network>
                   {`${network} ${t('c.network')}`}
-                  {isReadOnly && <ReadOnly>({t('c.readonly')})</ReadOnly>}
-                  {!isReadOnly && displayName && <Name>({displayName})</Name>}
+                  {/* {isReadOnly && <ReadOnly>({t('c.readonly')})</ReadOnly>}
+                  {!isReadOnly && displayName && <Name>({displayName})</Name>} */}
                 </Network>
                 <NoAccounts
                   onClick={isReadOnly ? handleConnect : handleDisconnect}
@@ -341,18 +383,6 @@ export default ({ match }) => {
               </NetworkStatus>
             </>
           )}
-          <Nav>
-            {accounts?.length > 0 && (
-              <NavLink
-                active={url === '/address/' + accounts[0]}
-                to={'/address/' + accounts[0]}
-              >
-                {t('c.mynames')}
-              </NavLink>
-            )}
-            <NavLink to="/favourites">{t('c.favourites')}</NavLink>
-            <ExternalLink href={aboutPageURL()}>{t('c.about')}</ExternalLink>
-          </Nav>
         </HeroTop>
         <SearchContainer>
           <>
@@ -369,37 +399,6 @@ export default ({ match }) => {
           </>
         </SearchContainer>
       </Hero>
-      <Announcement />
-      <Explanation>
-        <WhatItIs>
-          <Inner>
-            <H2>
-              <TextBubble color="#2B2B2B" />
-              {t('home.whatisens.title')}
-            </H2>
-            <p>{t('home.whatisens.body')}</p>
-            <ExternalButtonLink href={aboutPageURL()}>
-              {t('c.learnmore')}
-            </ExternalButtonLink>
-          </Inner>
-        </WhatItIs>
-        <NameAnimation>
-          <Alice />
-        </NameAnimation>
-        <HowToUse />
-        <HowItWorks>
-          <Inner>
-            <H2>
-              <QuestionMark color="#2B2B2B" />
-              {t('home.howtouse.title')}
-            </H2>
-            <p>{t('home.howtouse.body')}</p>
-            <ExternalButtonLink href={aboutPageURL()}>
-              {t('c.learnmore')}
-            </ExternalButtonLink>
-          </Inner>
-        </HowItWorks>
-      </Explanation>
     </>
   )
 }

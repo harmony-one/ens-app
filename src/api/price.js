@@ -19,7 +19,8 @@ function getContract(network) {
     1: '0xF79D6aFBb6dA890132F9D7c355e3015f15F3406F',
     3: '0x8468b2bDCE073A157E560AA4D9CcF6dB1DB98507',
     4: '0x0bF4e7bf3e1f6D6Dc29AA516A33134985cC3A5aA',
-    42: '0xD21912D8762078598283B14cbA40Cb4bFCb87581'
+    42: '0xD21912D8762078598283B14cbA40Cb4bFCb87581',
+    1666700000: '0xF79D6aFBb6dA890132F9D7c355e3015f15F3406F' // TODO - deploy
   }
   if (contracts[network]) {
     return contracts[network]
@@ -40,7 +41,16 @@ export default async function getEtherPrice() {
       ChainLinkABI,
       provider
     )
-    const price = (await ethUsdContract.latestAnswer()).toNumber() / 100000000
+
+    let price = 0
+
+    try {
+      price = await ethUsdContract.latestAnswer()
+      price = price.toNumber() / 100000000
+    } catch (e) {
+      console.log(e)
+    }
+
     return price
   } catch (e) {
     console.log(e, 'error getting usd price oracle')

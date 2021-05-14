@@ -25,7 +25,7 @@ export function validateRecord({ type, value, contentType, selectedKey }) {
       return true
     case 'coins':
       if (value === '') return false
-      if (selectedKey === 'ETH') {
+      if (selectedKey === 'ONE') {
         return addressUtils.isAddress(value)
       }
       try {

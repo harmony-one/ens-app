@@ -16,34 +16,7 @@ let provider
 const option = {
   network: 'mainnet', // optional
   cacheProvider: true, // optional
-  providerOptions: {
-    walletconnect: {
-      package: WalletConnectProvider,
-      options: {
-        infuraId: INFURA_ID
-      }
-    },
-    // Alphabetical order from now on.
-    authereum: {
-      package: Authereum
-    },
-    mewconnect: {
-      package: MewConnect,
-      options: {
-        infuraId: INFURA_ID,
-        description: ' '
-      }
-    },
-    portis: {
-      package: Portis,
-      options: {
-        id: PORTIS_ID
-      }
-    },
-    torus: {
-      package: Torus
-    }
-  }
+  providerOptions: {}
 }
 let web3Modal
 export const connect = async () => {

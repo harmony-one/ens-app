@@ -129,11 +129,11 @@
     "announcements": {
     },
     "howtouse": {
-      "body": "Приложение ENS App является графическим интерфейсом пользователя для обычных пользователей. Оно позволяет вам найти любое имя, управлять его адресом или тем, куда он направляет и создавать поддомены для каждого из имён.",
-      "title": "Как пользоваться ENS"
+      "body": "Приложение OneNames App является графическим интерфейсом пользователя для обычных пользователей. Оно позволяет вам найти любое имя, управлять его адресом или тем, куда он направляет и создавать поддомены для каждого из имён.",
+      "title": "Как пользоваться OneNames"
     },
     "whatisens": {
-      "body": "Ethereum Name Service является распределённой, открытой и исчерпывающий системой имён на блокчейне Ethereum. ENS устраняет необходимость копировать или набирать длинные адреса.",
+      "body": "OneNames Service является распределённой, открытой и исчерпывающий системой имён на блокчейне Ethereum. ENS устраняет необходимость копировать или набирать длинные адреса.",
       "title": "Что это"
     }
   },
@@ -165,10 +165,10 @@
     "text": "TX в ожидании"
   },
   "pricer": {
-    "gasDescription": "Estimated Gas Price (Step 1 + Step 3). The gas price will flucuate.",    
+    "gasDescription": "Estimated Gas Price (Step 1 + Step 3). The gas price will flucuate.",
     "pricePerAmount": "Price per amount of time selected",
     "registrationPeriodLabel": "Срок регистрации",
-    "registrationPriceLabel": "Registration price to pay",
+    "registrationPriceLabel": "Registration for 1 year",
     "totalDescription": "Estimated Total (Price + Gas). The gas price is based at {{gasPriceToGweiFast}} Gwei",
     "totalPriceLabel": "Общие сумма к оплате",
     "yearUnit": "год"
@@ -301,7 +301,7 @@
         "title": "1. Set Resolver"
       },
       "step2": {
-        "text": "Once you have set the Resolver, you can then add records by clicking the ‘ADD/EDIT RECORD’ in the ‘records’ field. Find 'addresses' and then 'ETH' in the dropdown, paste in your address and then click confirm below and then in the modal. Adding your ethereum address will allow you to point your wallet to your name in the next step.",
+        "text": "Once you have set the Resolver, you can then add records by clicking the ‘ADD/EDIT RECORD’ in the ‘records’ field. Find 'addresses' and then 'ONE' in the dropdown, paste in your address and then click confirm below and then in the modal. Adding your ethereum address will allow you to point your wallet to your name in the next step.",
         "title": "2. Set Address"
       },
       "step3": {

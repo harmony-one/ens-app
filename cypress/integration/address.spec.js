@@ -6,7 +6,7 @@ const DISABLED_COLOUR = 'rgb(199, 211, 227)'
 describe('/address', () => {
   it('contains the list of names owened by the user', () => {
     cy.visit(ROOT)
-    cy.getByPlaceholderText('Search', { exact: false }).type('resolver.eth')
+    cy.getByPlaceholderText('Search', { exact: false }).type('resolver.one')
     cy.get('button')
       .contains('Search')
       .click()
@@ -24,7 +24,7 @@ describe('/address', () => {
       exact: false,
       timeout: 10000
     }).should('exist')
-    cy.queryByText('newname.eth', { exact: false }).should('exist')
+    cy.queryByText('newname.one', { exact: false }).should('exist')
     cy.queryByText('Expires', { exact: false }).should('exist')
   })
 
@@ -32,7 +32,7 @@ describe('/address', () => {
     cy.visit(ROOT)
     cy.getByText('My Account').click({ force: true })
     // force:false will click the link under the element
-    cy.getByTestId('checkbox-newname.eth', { timeout: 10000 }).click({
+    cy.getByTestId('checkbox-newname.one', { timeout: 10000 }).click({
       force: true
     })
     cy.get('[data-testid="checkbox-newname.eth"] div').should(

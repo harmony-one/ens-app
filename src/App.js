@@ -88,7 +88,7 @@ const App = ({ initialClient, initialNetworkId }) => {
                     />
                     <Route path="/test-registrar" component={TestRegistrar} />
                     <Route path="/favourites" component={Favourites} />
-                    <Route path="/faq" component={Faq} />
+                    {/*<Route path="/faq" component={Faq} />*/}
                     <Route path="/my-bids" component={SearchResults} />
                     <Route path="/how-it-works" component={SearchResults} />
                     <Route

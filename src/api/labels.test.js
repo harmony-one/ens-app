@@ -50,8 +50,8 @@ describe('saveLabel', () => {
 
 describe('saveName', () => {
   test('should save all labels to localStorage', () => {
-    const name = 'vitalik.eth'
-    const nameArray = ['vitalik', 'eth']
+    const name = 'vitalik.one'
+    const nameArray = ['vitalik', 'one']
     const hashes = [
       '0xaf2caa1c2ca1d027f1ac823b529d0a67cd144264b2789fa2ea4d63a67c7103cc',
       '0x4f5b812789fc606be1b3b16908db13fc7a9adf7ca72641f84d75b47069d3d7f0'
@@ -65,8 +65,8 @@ describe('saveName', () => {
   })
 
   test('should save all labels to localStorage', () => {
-    const name = 'awesome.vitalik.eth'
-    const nameArray = ['awesome', 'vitalik', 'eth']
+    const name = 'awesome.vitalik.one'
+    const nameArray = ['awesome', 'vitalik', 'one']
     const hashes = [
       '0xd17d1d80d5d7a434b56ee59bc2ed8f0fd2a890dfba40fc63344b9c3654c935ee',
       '0xaf2caa1c2ca1d027f1ac823b529d0a67cd144264b2789fa2ea4d63a67c7103cc',

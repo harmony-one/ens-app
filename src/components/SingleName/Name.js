@@ -29,7 +29,7 @@ const RightBar = styled('div')`
 const Favourite = styled(DefaultFavourite)``
 
 function isRegistrationOpen(available, parent, isDeedOwner) {
-  return parent === 'eth' && !isDeedOwner && available
+  return parent === 'one' && !isDeedOwner && available
 }
 
 function isDNSRegistrationOpen(domain) {
@@ -110,7 +110,7 @@ function Name({ details: domain, name, pathname, type, refetch }) {
                   : t('c.Controller')}
               </Owner>
             )}
-            <Favourite domain={domain} />
+            {/* <Favourite domain={domain} /> */}
             {smallBP && (
               <Tabs
                 pathname={pathname}
