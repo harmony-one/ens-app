@@ -144,7 +144,7 @@ const HowToUse = styled(HowToUseDefault)`
 `
 
 const Hero = styled('section')`
-  background-color: #0c93ea;
+  background-color: #00b0ef;
   padding: 60px 20px 20px;
   position: relative;
   display: flex;
@@ -351,7 +351,7 @@ export default ({ match }) => {
             )} */}
             <ul>
               <li>
-                <img src="https://assets.website-files.com/5ea98076e2f684f39f95888f/5ea98076e2f684fdc09588b9_harmony_logo.svg" />
+                <img src="https://crazy.one/images/harmony-logo-only.svg" />
               </li>
               <li>
                 <a href="https://onenames.gitbook.io/onenames/" target="_blank">
