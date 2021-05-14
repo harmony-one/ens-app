@@ -10,7 +10,7 @@
     "@emotion/styled": "^10.0.9",
     "@ensdomains/address-encoder": "^0.2.6",
     "@ensdomains/mock": "^2.0.36",
-    "@ensdomains/ui": "git+ssh://git@github.com:harmony-one/ui.git#dcaa85c04bdee2fd74d4747bce0992018f054f54",
+    "@ensdomains/ui": "git+https://github.com/harmony-one/ui.git#dcaa85c04bdee2fd74d4747bce0992018f054f54",
     "@myetherwallet/mewconnect-web-client": "^2.1.11",
     "@portis/web3": "^2.0.0-beta.59",
     "@toruslabs/torus-embed": "^1.8.6",
