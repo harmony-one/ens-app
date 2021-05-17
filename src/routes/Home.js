@@ -144,6 +144,7 @@ const HowToUse = styled(HowToUseDefault)`
 `
 
 const Hero = styled('section')`
+  font-family: 'Nunito';
   background-color: #00b0ef;
   padding: 60px 20px 20px;
   position: relative;
@@ -157,6 +158,7 @@ const Hero = styled('section')`
 `
 
 const SearchContainer = styled('div')`
+  font-family: 'Nunito';
   margin: 0 auto 0;
   display: flex;
   flex-direction: column;
@@ -186,6 +188,7 @@ const Search = styled(SearchDefault)`
   `}
 
   input {
+    font-family: 'Nunito';
     width: 100%;
     border-radius: 0px;
     ${mq.medium`
@@ -195,6 +198,8 @@ const Search = styled(SearchDefault)`
   }
 
   button {
+    font-family: 'Nunito';
+    font-weight: bold;
     border-radius: 0 6px 6px 0;
   }
 `
@@ -341,18 +346,20 @@ export default ({ match }) => {
       <Hero>
         <HeroTop>
           <Nav>
-            {/* {accounts?.length > 0 && (
-              <NavLink
-                active={url === '/address/' + accounts[0]}
-                to={'/address/' + accounts[0]}
-              >
-                {t('c.mynames')}
-              </NavLink>
-            )} */}
             <ul>
               <li>
                 <img src="https://crazy.one/images/harmony-logo-only.svg" />
               </li>
+              {/* {accounts?.length > 0 && (
+              <li>
+                <NavLink
+                  active={url === '/address/' + accounts[0]}
+                  to={'/address/' + accounts[0]}
+                >
+                  {t('c.mynames')}
+                </NavLink>
+              </li>
+              )} */}
               <li>
                 <a href="https://onenames.gitbook.io/onenames/" target="_blank">
                   {t('c.about')}
