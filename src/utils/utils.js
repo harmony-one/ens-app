@@ -182,7 +182,7 @@ export const aboutPageURL = () => {
   const lang = window.localStorage.getItem('language') || ''
 
   // return `https://ens.domains/${lang === 'en' ? '' : lang}`
-  return 'https://onenames.gitbook.io/onenames/'
+  return 'https://one-names-official.gitbook.io/one-names/'
 }
 
 export function isRecordEmpty(value) {

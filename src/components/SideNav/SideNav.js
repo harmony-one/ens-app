@@ -154,7 +154,7 @@ function SideNav({ match, isMenuOpen, toggleMenu }) {
         </li> */}
         <li>
           <ThirdPartyLink
-            href="https://onenames.gitbook.io/onenames/faq"
+            href="https://one-names-official.gitbook.io/one-names/faq"
             target="_blank"
           >
             <SpeechBubble />

@@ -361,13 +361,16 @@ export default ({ match }) => {
               </li>
               )} */}
               <li>
-                <a href="https://onenames.gitbook.io/onenames/" target="_blank">
+                <a
+                  href="https://one-names-official.gitbook.io/one-names/"
+                  target="_blank"
+                >
                   {t('c.about')}
                 </a>
               </li>
               <li>
                 <a
-                  href="https://onenames.gitbook.io/onenames/faq"
+                  href="https://one-names-official.gitbook.io/one-names/faq"
                   target="_blank"
                 >
                   {t('c.faq')}
