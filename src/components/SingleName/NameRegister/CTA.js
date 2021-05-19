@@ -193,9 +193,9 @@ function getCTA({
     ),
     REVEAL_CONFIRMED: (
       <>
-        <SetReverseRecord to={`/address/${account}`}>
+        {/* <SetReverseRecord to={`/address/${account}`}>
           Set reverse record
-        </SetReverseRecord>
+        </SetReverseRecord> */}
         <AddToCalendar
           css={css`
             margin-right: 20px;
