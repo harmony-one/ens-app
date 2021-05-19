@@ -611,12 +611,12 @@ const ReverseRecordBox = ({ domain }) => {
           )
         ) : (
           <p>
-            If you want to display this domain for your address {domain.addr}{' '}
-            you need to create reverse record
+            {/* If you want to display this domain for your address {domain.addr}{' '}
+            you need to create reverse record */}
           </p>
         )}
       </div>
-      <div>
+      {/* <div>
         {revAddress && revAddress === domain.name ? null : (
           <Mutation
             mutation={SET_NAME}
@@ -649,7 +649,7 @@ const ReverseRecordBox = ({ domain }) => {
             )}
           </Mutation>
         )}
-      </div>
+      </div> */}
     </div>
   )
 }
