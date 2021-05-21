@@ -87,7 +87,7 @@
     "steps": {
       "addtext": {
         "text": "Click 'learn more' to read about the process.",
-        "title": "Set up a text record in your domain registrar then click refresh. The text record should contain your Ethereum address in the form:"
+        "title": "Set up a text record in your domain registrar then click refresh. The text record should contain your Harmony address in the form:"
       },
       "enable": {
         "text": "Click 'learn more' to read about the process.",
@@ -96,13 +96,13 @@
       "manage": {
         "text1": "Since you are the owner, you can manage your name now. ",
         "text2": "Since you are not the owner, you can only view the name in the manager.",
-        "title": "Congratulations! You have successfully added this DNS domain to the ENS Registry."
+        "title": "Congratulations! You have successfully added this DNS domain to the ONE Registry."
       },
       "proof": {
         "text1": "The address that appears in the DNS txt record is your same address.",
-        "text2": "If you know you own this domain, change it's TXT record to contain your Ethereum Address and refresh this page to perform the DNSSEC verification again.",
-        "title1": "You are the owner of this address. Add your domain to the ENS Registry now.",
-        "title2": "You don't appear to be the DNS Owner of this domain, but anyone can add this domain to the ENS Registry."
+        "text2": "If you know you own this domain, change it's TXT record to contain your Harmony Address and refresh this page to perform the DNSSEC verification again.",
+        "title1": "You are the owner of this address. Add your domain to the ONE Registry now.",
+        "title2": "You don't appear to be the DNS Owner of this domain, but anyone can add this domain to the ONE Registry."
       }
     },
     "viewinmanager": "View in Manager"
@@ -141,7 +141,7 @@
       "title": "Save favourite names"
     },
     "manage": {
-      "text": "Point domains to your ethereum addresses, transfer ownership to other people and more.",
+      "text": "Point domains to your Harmony addresses, transfer ownership to other people and more.",
       "title": "Manage names"
     },
     "register": {
@@ -216,7 +216,7 @@
     ]
   },
   "registrymigration": {
-    "donotaccept": "*If you trade ENS names, do not accept this name!",
+    "donotaccept": "*If you trade ONE names, do not accept this name!",
     "messages": {
       "controller": "This name is controlled by a contract and can't be migrated automatically. Please redeploy your contract to use the new registry before setting the new controller",
       "default": "This name needs to be migrated to the new Registry. Only the parent of this name ({{parent}}) can do this.",
@@ -234,8 +234,8 @@
       "title": "Register {{name}}"
     },
     "renewal": {
-      "description": "Your ENS name is expiring soon, please renew it",
-      "title": "Renew your ENS domain {{name}}"
+      "description": "Your ONE name is expiring soon, please renew it",
+      "title": "Renew your ONE domain {{name}}"
     }
   },
   "search": {
@@ -299,7 +299,7 @@
         "title": "1. Set Resolver"
       },
       "step2": {
-        "text": "Once you have set the Resolver, you can then add records by clicking the ‘ADD/EDIT RECORD’ in the ‘records’ field. Find 'addresses' and then 'ONE' in the dropdown, paste in your address and then click confirm below and then in the modal. Adding your ethereum address will allow you to point your wallet to your name in the next step.",
+        "text": "Once you have set the Resolver, you can then add records by clicking the ‘ADD/EDIT RECORD’ in the ‘records’ field. Find 'addresses' and then 'ONE' in the dropdown, paste in your address and then click confirm below and then in the modal. Adding your Harmony address will allow you to point your wallet to your name in the next step.",
         "title": "2. Set Address"
       },
       "step3": {
@@ -320,9 +320,9 @@
       "closeEdit": "Close Add/Edit Records",
       "messages": {
         "explanation": "The Reverse Resolution translates an address into a name. It allows Dapps to show in their interfaces '{{name}}' rather than the long address '{{account}}'. If you would like to set up your reverse for a different account, please switch accounts in your dapp browser",
-        "explanation2": "You can only select names you set this Ethereum Address as.",
+        "explanation2": "You can only select names you set this Harmony Address as.",
         "notSet": "Reverse record: not set",
-        "selectPlaceholder": "Select your ENS name",
+        "selectPlaceholder": "Select your ONE name",
         "setTo": "Reverse record: Set to ",
         "setToDifferent": "Reverse record: Set to a different name:"
       },

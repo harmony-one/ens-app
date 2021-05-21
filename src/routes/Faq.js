@@ -66,7 +66,7 @@ function Faq() {
     <FaqContainer>
       <Title>FAQ</Title>
       <H2>Before You register</H2>
-      <Section question="Is ENS only for storing an Ethereum address?">
+      <Section question="Is ENS only for storing an Harmony address?">
         No, you can store the addresses of many different cryptocurrencies, a
         content hash of a decentralized website, profile information such as an
         avatar and Twitter handle, and more.
@@ -131,7 +131,7 @@ function Faq() {
 
       <Section question="I am stuck at step 2">
         At times, the counter waits for up to a minute at the end of step 2 to
-        make sure that the Ethereum blockchain has progressed. If this continues
+        make sure that the Harmony blockchain has progressed. If this continues
         for more than 5 min after moving to step 2, please contact us on
         Discord.
         <br />
@@ -150,7 +150,7 @@ function Faq() {
       <H2>After you register</H2>
 
       <Section question="What is the difference between the Registrant and Controller?">
-        If your Ethereum address is set as the Controller you can change the
+        If your Harmony address is set as the Controller you can change the
         resolver and add/edit records. Some dapps (eg: Fleek, OpenSea) set
         themselves as the Controller so they can update records on your behalf.
         <br />
@@ -167,10 +167,10 @@ function Faq() {
       </Section>
 
       <Section question="What is a Reverse Record?">
-        A Reverse Record makes your Ethereum address point to an ENS name
+        A Reverse Record makes your Harmony address point to an ENS name
         (normally ENS names point to addresses, hence "reverse" record). This
         allows dapps to find and display your ENS name when you connect to them
-        with your Ethereum account. This can only be set by you so it is not set
+        with your Harmony account. This can only be set by you so it is not set
         automatically upon registration.
         <br />
         To set the reverse record, please click "My account", and select
@@ -194,15 +194,15 @@ function Faq() {
 
       <Section question="How do I transfer my name?">
         For a ".eth" name, transfer both the Registrant and the Controller to
-        the new Ethereum account. Since ".eth" names are ERC721 compliant NFTs,
+        the new Harmony account. Since ".eth" names are ERC721 compliant NFTs,
         you can change the Registrant by simply transferring the NFT from any
         NFT compliant wallet/marketplace as well.
         <br />
-        For subdomains, click change the Controller to the new Ethereum account.
+        For subdomains, click change the Controller to the new Harmony account.
         Note that transferring the ownership of the name does not change the
         records, so the recipient may need to update them. If the recipient is
         not experienced, it may be a good idea for you to clear your records and
-        set the ETH Address record to their Ethereum address before transferring
+        set the ETH Address record to their Harmony address before transferring
         the name.
       </Section>
 
@@ -240,8 +240,8 @@ function Faq() {
         overwrites it.
       </Section>
 
-      <Section question="I lost access to the Ethereum account that owns a name I registered. Can I still renew it?">
-        Any Ethereum account can pay to renew any ENS name, though doing so from
+      <Section question="I lost access to the Harmony account that owns a name I registered. Can I still renew it?">
+        Any Harmony account can pay to renew any ENS name, though doing so from
         an account that, s not the owner will not change ownership of the name.
         Just go to the name,s page and click "Renew".
       </Section>
