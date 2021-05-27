@@ -15,6 +15,7 @@ import SearchResults from './routes/SearchResults'
 import SingleName from './routes/SingleName'
 import Favourites from './routes/Favourites'
 import Faq from './routes/Faq'
+import Transactions from './routes/Transactions'
 import Address from './routes/AddressPage'
 import Renew from './routes/Renew'
 import Modal from './components/Modal/Modal'
@@ -87,6 +88,11 @@ const App = ({ initialClient, initialNetworkId }) => {
                       layout={HomePageLayout}
                     />
                     <Route path="/test-registrar" component={TestRegistrar} />
+                    <Route
+                      path="/transactions"
+                      component={Transactions}
+                      title="test"
+                    />
                     <Route path="/favourites" component={Favourites} />
                     {/*<Route path="/faq" component={Faq} />*/}
                     <Route path="/my-bids" component={SearchResults} />
