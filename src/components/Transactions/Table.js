@@ -115,7 +115,8 @@ class Table extends React.Component {
       isLoaded: false,
       totalElements: 0,
       totalPages: 0,
-      items: []
+      items: [],
+      search: ''
     }
   }
 
@@ -124,15 +125,53 @@ class Table extends React.Component {
   }
 
   async getData() {
-    const response = await fetch('https://hmny-t.co/one-registrations')
+    let url = 'https://hmny-t.co/one-registrations'
+    this.state.items = []
+
+    if (this.state.search.length) {
+      const query = this.querystring({ search: this.state.search })
+      url = `${url}${query}`
+      console.log('LOGIT', url)
+    }
+    const response = await fetch(url)
     const data = await response.json()
-    console.log('LOGIT', data)
     this.setState({
       isLoaded: true,
       items: data.content,
       totalElements: data.totalElements,
       totalPages: data.totalPages
     })
+  }
+
+  handleInputChanged(e) {
+    this.setState({
+      search: e.target.value
+    })
+  }
+
+  handleSubmit = e => {
+    e.preventDefault()
+    this.getData()
+  }
+
+  clearHandler = e => {
+    if (this.state.search.length < 1) {
+      this.getData()
+    }
+  }
+
+  querystring(query = {}) {
+    const qs = Object.entries(query)
+      .filter(pair => pair[1] !== undefined)
+      .map(pair =>
+        pair
+          .filter(i => i !== null)
+          .map(encodeURIComponent)
+          .join('=')
+      )
+      .join('&')
+
+    return qs && '?' + qs
   }
 
   render() {
@@ -142,12 +181,17 @@ class Table extends React.Component {
       return (
         <div>
           <Search>
-            <form>
+            <form onSubmit={this.handleSubmit}>
               <div className="search-container">
                 <i class="icon" />
                 <input
-                  id="search"
+                  value={this.state.search}
+                  onChange={this.handleInputChanged.bind(this)}
+                  ref={element =>
+                    ((element || {}).onsearch = this.clearHandler)
+                  }
                   type="search"
+                  id="search"
                   placeholder="Search for domain or owner address"
                   spellcheck="false"
                 />
