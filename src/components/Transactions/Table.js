@@ -115,6 +115,8 @@ class Table extends React.Component {
       isLoaded: false,
       totalElements: 0,
       totalPages: 0,
+      size: 20,
+      page: 0,
       items: [],
       search: ''
     }
@@ -126,13 +128,23 @@ class Table extends React.Component {
 
   async getData() {
     let url = 'https://hmny-t.co/one-registrations'
+    let query = this.querystring({
+      size: this.state.size,
+      page: this.state.page
+    })
     this.state.items = []
 
     if (this.state.search.length) {
-      const query = this.querystring({ search: this.state.search })
-      url = `${url}${query}`
-      console.log('LOGIT', url)
+      query = this.querystring({
+        search: this.state.search,
+        size: this.state.size,
+        page: this.state.page
+      })
     }
+
+    url = `${url}${query}`
+    console.log('LOGIT', url)
+
     const response = await fetch(url)
     const data = await response.json()
     this.setState({
@@ -151,13 +163,40 @@ class Table extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault()
-    this.getData()
+    this.setState(
+      {
+        page: 0
+      },
+      () => {
+        this.getData()
+      }
+    )
   }
 
   clearHandler = e => {
     if (this.state.search.length < 1) {
-      this.getData()
+      this.setState(
+        {
+          page: 0
+        },
+        () => {
+          this.getData()
+        }
+      )
     }
+  }
+
+  handleClick(e, pageLink) {
+    e.preventDefault()
+
+    this.setState(
+      {
+        page: pageLink
+      },
+      () => {
+        this.getData()
+      }
+    )
   }
 
   querystring(query = {}) {
@@ -175,7 +214,7 @@ class Table extends React.Component {
   }
 
   render() {
-    const { isLoaded, items, totalElements, totalPages } = this.state
+    const { isLoaded, items, totalElements, totalPages, page } = this.state
 
     if (isLoaded) {
       return (
@@ -214,7 +253,17 @@ class Table extends React.Component {
                 return (
                   <tr key={index}>
                     <td className="small">{row.domain}</td>
-                    <td>{row.ownerONE}</td>
+                    <td>
+                      <a
+                        href={
+                          'https://explorer.harmony.one/#/address/' +
+                          row.ownerONE
+                        }
+                        target="_blank"
+                      >
+                        {row.ownerONE}
+                      </a>
+                    </td>
                     <td className="small">{row.price}</td>
                     <td className="small">{row.expires}</td>
                   </tr>
@@ -227,14 +276,28 @@ class Table extends React.Component {
             </TransactionsCount>
 
             <Pagination>
-              {[...Array(totalPages).keys()].map(function(pageLink, index) {
-                return (
-                  <span key={index}>
+              {[...Array(totalPages).keys()].map((pageLink, index) => {
+                if (totalPages < 2) {
+                  return <span />
+                } else if (pageLink == page) {
+                  return (
                     <span>
-                      <a href="">{pageLink + 1}</a>
+                      <span>
+                        <strong>{pageLink + 1}</strong>
+                      </span>
                     </span>
-                  </span>
-                )
+                  )
+                } else {
+                  return (
+                    <span key={index}>
+                      <span>
+                        <a href="" onClick={e => this.handleClick(e, pageLink)}>
+                          {pageLink + 1}
+                        </a>
+                      </span>
+                    </span>
+                  )
+                }
               })}
             </Pagination>
           </TableContainer>
